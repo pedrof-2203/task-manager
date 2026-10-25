@@ -79,8 +79,7 @@ public abstract class TaskRepositoryTest {
     private Task createTask() {
         return new Task(
                 "Test task",
-                Optional.of("Test description"),
-                TaskStatus.PENDING
+                Optional.of("Test description")
         );
     }
 }
