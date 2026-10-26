@@ -14,7 +14,7 @@ public class CreateTaskUseCase {
         this.repository = repository;
     }
 
-    TaskOutput execute(CreateTaskInput input)  {
+    public TaskOutput execute(CreateTaskInput input)  {
         var newTask = new Task(input.title(), input.description());
         var saved = repository.save(newTask);
         return TaskOutput.from(saved);
