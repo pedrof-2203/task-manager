@@ -9,10 +9,10 @@ import java.util.Optional;
 @Getter
 @Setter
 public class Task {
-    private final TaskId id;
-    private final String title;
-    private final Optional<String> description;
-    private final TaskStatus status;
+    private TaskId id;
+    private String title;
+    private Optional<String> description;
+    private TaskStatus status;
 
     public Task(String title, Optional<String> description) {
         Assert.notNull(title, "Title must not be empty");
@@ -21,5 +21,15 @@ public class Task {
         this.title = title;
         this.description = description;
         this.status = TaskStatus.PENDING;
+    }
+
+    public void update(
+            Optional<String> title,
+            Optional<String> description,
+            Optional<TaskStatus> status
+    ) {
+        title.ifPresent(this::setTitle);
+        description.ifPresent(d -> this.setDescription(Optional.of(d)));
+        status.ifPresent(this::setStatus);
     }
 }
