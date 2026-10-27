@@ -1,0 +1,71 @@
+= Task Manager API
+:toc: left
+:toclevels: 2
+:sectnums:
+:source-highlighter: rouge
+
+== Introduction
+
+A REST API for managing tasks. It supports creating, retrieving, updating, and deleting tasks.
+
+Base path: `/tasks`
+
+== Tasks
+
+=== Create a task
+
+Creates a new task.
+
+.Request
+include::{snippets}/create-task/http-request.adoc[]
+
+.Response
+include::{snippets}/create-task/http-response.adoc[]
+
+=== List all tasks
+
+Returns all registered tasks.
+
+.Request
+include::{snippets}/list-tasks/http-request.adoc[]
+
+.Response
+include::{snippets}/list-tasks/http-response.adoc[]
+
+=== Get a task by ID
+
+Returns a task identified by its UUID.
+
+.Request
+include::{snippets}/get-task/http-request.adoc[]
+
+.Path parameters
+
+include::{snippets}/get-task/path-parameters.adoc[]
+
+.Response
+include::{snippets}/get-task/http-response.adoc[]
+
+=== Update a task
+
+Updates an existing task identified by its UUID.
+
+.Request
+include::{snippets}/update-task/http-request.adoc[]
+
+.Path parameters
+
+include::{snippets}/update-task/path-parameters.adoc[]
+
+.Response
+include::{snippets}/update-task/http-response.adoc[]
+
+=== Delete a task
+
+Deletes a task identified by its UUID.
+
+.Request
+include::{snippets}/delete-task/http-request.adoc[]
+
+.Response
+include::{snippets}/delete-task/http-response.adoc[]
